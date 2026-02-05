@@ -5,7 +5,8 @@ metadata:
   namespace: monitoring
 spec:
   parentRefs:
-  - name: lab-gateway
+  - name: platform-gateway
+    namespace: gateway-system
   hostnames:
   - grafana.lab.local
   rules:
