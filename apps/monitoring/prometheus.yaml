@@ -63,4 +63,4 @@ spec:
     app: prometheus
   ports:
   - port: 9090
-    nodePort: 30090
+    nodePort: 30095

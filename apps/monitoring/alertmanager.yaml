@@ -6,7 +6,7 @@ metadata:
 data:
   alertmanager.yml: |
     global:
-      resolve_timeout: 5m
+      resolve_timeout: 6m
 
     route:
       receiver: "default"
@@ -57,4 +57,4 @@ spec:
     app: alertmanager
   ports:
   - port: 9093
-    nodePort: 30031
+    nodePort: 30032
