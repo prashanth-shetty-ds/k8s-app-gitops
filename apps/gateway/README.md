@@ -87,7 +87,7 @@ kubectl apply -f https://github.com/envoyproxy/gateway/releases/download/v1.0.2/
 kubectl get crds | grep envoy
 ```
 
-** Verify: **
+**Verify:**
 ```bash
 kubectl get crds | grep envoy
 ```
@@ -250,6 +250,7 @@ This setup provides:
     
 
 This is modern Kubernetes networking architecture.
+
 
 
 
