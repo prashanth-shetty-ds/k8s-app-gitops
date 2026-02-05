@@ -88,12 +88,12 @@ kubectl get crds | grep envoy
 ```
 
 **Verify:**
-```bash
+``` bash
 kubectl get crds | grep envoy
 ```
 
 **Expected:**
-```bash
+``` bash
 clienttrafficpolicies.gateway.envoyproxy.io
 backendtrafficpolicies.gateway.envoyproxy.io
 ```
@@ -250,6 +250,7 @@ This setup provides:
     
 
 This is modern Kubernetes networking architecture.
+
 
 
 
