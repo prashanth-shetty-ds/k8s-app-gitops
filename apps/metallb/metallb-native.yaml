@@ -1,5 +1,6 @@
 # Official MetalLB manifest (native mode)
 # Source: https://raw.githubusercontent.com/metallb/metallb/v0.13.12/config/manifests/metallb-native.yaml
+# This contains all CRD's necessary for a metallb deployment.
 
 apiVersion: v1
 kind: List
