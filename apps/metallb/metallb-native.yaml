@@ -3,35 +3,43 @@ kind: Deployment
 metadata:
   name: controller
   namespace: metallb-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: metallb
+      component: controller
   template:
     metadata:
       labels:
         app: metallb
+        component: controller
     spec:
       containers:
       - name: controller
-        image: quay.io/metallb/controller:v0.14.5
+        image: quay.io/metallb/controller:v0.13.12
 ---
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: speaker
   namespace: metallb-system
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   selector:
     matchLabels:
-      app: metallb-speaker
+      app: metallb
+      component: speaker
   template:
     metadata:
       labels:
-        app: metallb-speaker
+        app: metallb
+        component: speaker
     spec:
       hostNetwork: true
       containers:
       - name: speaker
-        image: quay.io/metallb/speaker:v0.14.5
+        image: quay.io/metallb/speaker:v0.13.12
