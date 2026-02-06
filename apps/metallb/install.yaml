@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: controller
+  namespace: metallb-system
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: metallb
+  template:
+    metadata:
+      labels:
+        app: metallb
+    spec:
+      containers:
+      - name: controller
+        image: quay.io/metallb/controller:v0.14.5
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: speaker
+  namespace: metallb-system
+spec:
+  selector:
+    matchLabels:
+      app: metallb-speaker
+  template:
+    metadata:
+      labels:
+        app: metallb-speaker
+    spec:
+      hostNetwork: true
+      containers:
+      - name: speaker
+        image: quay.io/metallb/speaker:v0.14.5
